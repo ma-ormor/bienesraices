@@ -1,0 +1,13 @@
+header.bg-indigo-600.p-4
+  .container.mx-auto.flex.justify-between.items-center
+    a(href="/") 
+      h1.text-2xl.text-white.font-extrabold.text-center Bi
+        span.font-normal R
+    nav.my-0.text-sm.font-bold.text-white.hidden(
+      class="md:flex md:items-center md:gap-3")
+      a(href="/mis-propiedades?pagina=1") Propiedades
+      a(href="") Perfil
+
+      form(action="/auth/salir" method="POST")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        input.bg-indigo-800.py-2.px-10.rounded-lg(type="submit" value="Salir")

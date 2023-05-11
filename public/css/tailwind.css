@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaflet-container a {
+  color: #FFF;
+}
+
+@layer components {
+  .etiqueta{
+    @apply block text-sm uppercase text-gray-500 font-bold
+  }
+
+  .campo{
+    @apply w-full px-3 py-2 border border-gray-500 rounded-md placeholder-gray-400
+  }
+
+  .boton{
+    @apply rounded py-2 bg-indigo-600 text-sm px-10 font-bold text-white my-5 inline-block text-center w-full
+  }
+}

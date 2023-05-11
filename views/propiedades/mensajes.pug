@@ -1,0 +1,24 @@
+extends ../layout/admin
+
+block contenido
+  //-pre=JSON.stringify(mensajes, undefined, 2)
+
+  a.boton(href="/mis-propiedades?pagina=1" class="hover:bg-indigo-700 sm:w-auto") Volver 
+
+  h2(class="text-2xl font-extrabold text-center my-10")=pagina
+
+  div(class="mx-auto max-w-4xl bg-white shadow p-5")
+    if mensajes.length
+      ul 
+        each mensaje in mensajes
+          li(class="border-gray-200 border-b p-5") 
+            p(class="font-bold text-gray-800") Nombre: 
+              span(class="font-normal")=mensaje.usuario.nombre
+            //p(class="font-bold text-gray-800") Correo: 
+              span(class="font-normal")=mensaje.usuario.email
+            p(class="font-bold text-gray-800") Mensaje: 
+              span(class="font-normal")=mensaje.cuerpo
+            p(class="font-bold text-gray-800") Envíado: 
+              span(class="font-normal")=formatearFecha(mensaje.createdAt)
+    else 
+      p(class="text-center text-gray-600") Sin mensajes
